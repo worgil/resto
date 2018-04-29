@@ -12,10 +12,10 @@ operator = ""
 Tops = Frame(root, width=1600, height=50, bg="powder blue", relief=SUNKEN)
 Tops.pack(side=TOP)
 
-f1 = Frame(root, width=800, height=700, bg="powder blue", relief=SUNKEN)
+f1 = Frame(root, width=800, height=700, relief=SUNKEN)
 f1.pack(side=LEFT)
 
-f2 = Frame(root, width=300, height=700, bg="powder blue", relief=SUNKEN)
+f2 = Frame(root, width=300, height=700, relief=SUNKEN)
 f2.pack(side=RIGHT)
 ##########################ZAMAN###########################
 localtime = time.asctime((time.localtime(time.time())))
@@ -90,5 +90,105 @@ btnEquals = Button(f2, padx=16, pady=16, bd=8, fg="black", font=('arial', 20, 'b
                    text="=", bg="powder blue", command=btnEqualsInput).grid(row=5, column=2)
 Division = Button(f2, padx=16, pady=16, bd=8, fg="black", font=('arial', 20, 'bold'),
                   text="/", bg="powder blue", command=lambda: btnClick("/")).grid(row=5, column=3)
+#----------------------------------------Menu Info 1----------------------------------------------------------#
+rand=StringVar()
+cay=StringVar()
+kahve=StringVar()
+kola=StringVar()
+msuyu=StringVar()
+nescafe=StringVar()
+
+lblReference=Label(f1,font=('arial', 16, 'bold'),text="   Referans",bd=16,anchor='w')
+lblReference.grid(row=0,column=0)
+txtReference=Entry(f1,font=('arial', 16, 'bold'),textvariable=rand, bd=10, insertwidth=4,
+                   bg="powder blue", justify='right')
+txtReference.grid(row=0,column=1)
+#--------------------------------------------------------------------------------------
+lblCay=Label(f1,font=('arial', 16, 'bold'),text="Küçük Cay",bd=16,anchor='w')
+lblCay.grid(row=1,column=0)
+txtCay=Entry(f1,font=('arial', 16, 'bold'),textvariable=cay, bd=10, insertwidth=4,
+                   bg="powder blue", justify='right')
+txtCay.grid(row=1,column=1)
+#--------------------------------------------------------------------------------------
+lblKahve=Label(f1,font=('arial', 16, 'bold'),text="T. Kahvesi",bd=16,anchor='w')
+lblKahve.grid(row=2,column=0)
+txtKahve=Entry(f1,font=('arial', 16, 'bold'),textvariable=kahve, bd=10, insertwidth=4,
+                   bg="powder blue", justify='right')
+txtKahve.grid(row=2,column=1)
+#--------------------------------------------------------------------------------------
+lblKola=Label(f1,font=('arial', 16, 'bold'),text="Fanta / Cola",bd=16,anchor='w')
+lblKola.grid(row=3,column=0)
+txtKola=Entry(f1,font=('arial', 16, 'bold'),textvariable=kola, bd=10, insertwidth=4,
+                   bg="powder blue", justify='right')
+txtKola.grid(row=3,column=1)
+
+#--------------------------------------------------------------------------------------
+lblMsuyu=Label(f1,font=('arial', 16, 'bold'),text="Meyve Suyu",bd=16,anchor='w')
+lblMsuyu.grid(row=4,column=0)
+txtMsuyu=Entry(f1,font=('arial', 16, 'bold'),textvariable=msuyu, bd=10, insertwidth=4,
+                   bg="powder blue", justify='right')
+txtMsuyu.grid(row=4,column=1)
+
+#--------------------------------------------------------------------------------------
+lblNescafe=Label(f1,font=('arial', 16, 'bold'),text="Nescafe",bd=16,anchor='w')
+lblNescafe.grid(row=5,column=0)
+txtNescafe=Entry(f1,font=('arial', 16, 'bold'),textvariable=nescafe, bd=10, insertwidth=4,
+                   bg="powder blue", justify='right')
+txtNescafe.grid(row=5,column=1)
+
+#========================================Menu Info 2======================================#
+drinks=StringVar()
+cost=StringVar()
+service=StringVar()
+statetax=StringVar()
+totalcost=StringVar()
+
+lblDrinks=Label(f1,font=('arial', 16, 'bold'),text="Drinks",bd=16,anchor='w')
+lblDrinks.grid(row=0,column=2)
+txtDrinks=Entry(f1,font=('arial', 16, 'bold'),textvariable=drinks, bd=10, insertwidth=4,
+                   bg="#fff", justify='right')
+txtDrinks.grid(row=0,column=3)
+
+#--------------------------------------------------------------------------------------
+lblCost=Label(f1,font=('arial', 16, 'bold'),text="Cost",bd=16,anchor='w')
+lblCost.grid(row=1,column=2)
+txtCost=Entry(f1,font=('arial', 16, 'bold'),textvariable=cost, bd=10, insertwidth=4,
+              bg="#fff", justify='right')
+txtCost.grid(row=1,column=3)
+
+#--------------------------------------------------------------------------------------
+lblService=Label(f1,font=('arial', 16, 'bold'),text="Service Charge",bd=16,anchor='w')
+lblService.grid(row=2,column=2)
+txtService=Entry(f1,font=('arial', 16, 'bold'),textvariable=service, bd=10, insertwidth=4,
+                 bg="#fff", justify='right')
+txtService.grid(row=2,column=3)
+
+#--------------------------------------------------------------------------------------
+lblStateTax=Label(f1,font=('arial', 16, 'bold'),text="Tate Tax",bd=16,anchor='w')
+lblStateTax.grid(row=3,column=2)
+txtStateTax=Entry(f1,font=('arial', 16, 'bold'),textvariable=statetax, bd=10, insertwidth=4,
+                  bg="#fff", justify='right')
+txtStateTax.grid(row=3,column=3)
+
+#--------------------------------------------------------------------------------------
+lblSubTotal=Label(f1,font=('arial', 16, 'bold'),text="Sub Total",bd=16,anchor='w')
+lblSubTotal.grid(row=4,column=2)
+txtSubTotal=Entry(f1,font=('arial', 16, 'bold'),textvariable=msuyu, bd=10, insertwidth=4,
+                  bg="#fff", justify='right')
+txtSubTotal.grid(row=4,column=3)
+
+#--------------------------------------------------------------------------------------
+lblTotalCost=Label(f1,font=('arial', 16, 'bold'),text="Sub Total",bd=16,anchor='w')
+lblTotalCost.grid(row=5,column=2)
+txtTotalCost=Entry(f1,font=('arial', 16, 'bold'),textvariable=totalcost, bd=10, insertwidth=4,
+                   bg="#fff", justify='right')
+txtTotalCost.grid(row=5,column=3)
+#============================BUTONLAR==============================================
+
+
+
+
+
+
 
 root.mainloop()
