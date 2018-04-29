@@ -46,6 +46,24 @@ def btnEqualsInput():
     sumup = str(eval(operator))
     text_Input.set(sumup)
     operator = ""
+def Ref():
+    x=random.randint(10908,500876)
+    randomRef=str(x)
+    rand.set(randomRef)
+def qExit():
+    root.destroy()
+def Reset():
+    rand.set("")
+    cay.set("")
+    kahve.set("")
+    kola.set("")
+    msuyu.set("")
+    nescafe.set("")
+    drinks.set("")
+    cost.set("")
+    service.set("")
+    statetax.set("")
+    totalcost.set("")
 
 
 txtDisplay = Entry(f2, font=('arial', 20, 'bold'), textvariable=text_Input, bd=30, insertwidth=4,
@@ -97,6 +115,11 @@ kahve=StringVar()
 kola=StringVar()
 msuyu=StringVar()
 nescafe=StringVar()
+drinks=StringVar()
+cost=StringVar()
+service=StringVar()
+statetax=StringVar()
+totalcost=StringVar()
 
 lblReference=Label(f1,font=('arial', 16, 'bold'),text="   Referans",bd=16,anchor='w')
 lblReference.grid(row=0,column=0)
@@ -137,11 +160,6 @@ txtNescafe=Entry(f1,font=('arial', 16, 'bold'),textvariable=nescafe, bd=10, inse
 txtNescafe.grid(row=5,column=1)
 
 #========================================Menu Info 2======================================#
-drinks=StringVar()
-cost=StringVar()
-service=StringVar()
-statetax=StringVar()
-totalcost=StringVar()
 
 lblDrinks=Label(f1,font=('arial', 16, 'bold'),text="Drinks",bd=16,anchor='w')
 lblDrinks.grid(row=0,column=2)
@@ -178,13 +196,18 @@ txtSubTotal=Entry(f1,font=('arial', 16, 'bold'),textvariable=msuyu, bd=10, inser
 txtSubTotal.grid(row=4,column=3)
 
 #--------------------------------------------------------------------------------------
-lblTotalCost=Label(f1,font=('arial', 16, 'bold'),text="Sub Total",bd=16,anchor='w')
+lblTotalCost=Label(f1,font=('arial', 16, 'bold'),text="Total",bd=16,anchor='w')
 lblTotalCost.grid(row=5,column=2)
 txtTotalCost=Entry(f1,font=('arial', 16, 'bold'),textvariable=totalcost, bd=10, insertwidth=4,
                    bg="#fff", justify='right')
 txtTotalCost.grid(row=5,column=3)
 #============================BUTONLAR==============================================
-
+btnTotal=Button(f1,padx=16,pady=8,bd=16,fg="black",font=('arial',16,'bold'),width=10,
+                text="Toplam",bg="powder blue",command=Ref).grid(row=7,column=1)
+btnReset=Button(f1,padx=16,pady=8,bd=16,fg="black",font=('arial',16,'bold'),width=10,
+                text="Reset",bg="powder blue",command=Reset).grid(row=7,column=2)
+btnExit=Button(f1,padx=16,pady=8,bd=16,fg="black",font=('arial',16,'bold'),width=10,
+                text="Çıkış",bg="powder blue",command=qExit).grid(row=7,column=3)
 
 
 
