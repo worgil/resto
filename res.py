@@ -50,6 +50,32 @@ def Ref():
     x=random.randint(10908,500876)
     randomRef=str(x)
     rand.set(randomRef)
+    CoD=float(cay.get())
+    CoF=float(kahve.get())
+    CoG=float(kola.get())
+    CoH=float(msuyu.get())
+    CoJ=float(nescafe.get())
+    CoK=float(drinks.get())
+
+    CoDTotal= CoD*0,99
+    CoFTotal=CoF*1.00
+    CoGTotal=CoG*2.99
+    CoHTotal=CoH*2.87
+    CoJTotal=CoJ*2.89
+    CoKTotal=CoK*3.50
+
+    CostOfMeal="TL",str('%.2f' % (CoDTotal + CoFTotal + CoGTotal + CoHTotal + CoJTotal + CoKTotal))
+    PayTax=((CoDTotal + CoFTotal + CoGTotal + CoHTotal + CoJTotal + CoKTotal)*0.2)
+    TotalCost=(CoDTotal + CoFTotal + CoGTotal + CoHTotal + CoJTotal + CoKTotal)
+    Ser_Charge=((CoDTotal + CoFTotal + CoGTotal + CoHTotal + CoJTotal + CoKTotal)/99)
+    Service="TL", str("%.2" % Ser_Charge)
+    OverAllCost= "TL", str("%.2" % (PayTax+TotalCost+Ser_Charge))
+    PaidTax="TL", str("%.2" % PayTax)
+    Service_Charge.set(service)
+    Cost.set(CostOfMeal)
+    Tax.set(PaidTax)
+    SubTotal.set(CostOfMeal)
+    TotalCost.set(OverAllCost)
 def qExit():
     root.destroy()
 def Reset():
@@ -63,6 +89,7 @@ def Reset():
     cost.set("")
     service.set("")
     statetax.set("")
+    subtotal.set("")
     totalcost.set("")
 
 
@@ -119,6 +146,7 @@ drinks=StringVar()
 cost=StringVar()
 service=StringVar()
 statetax=StringVar()
+subtotal=StringVar()
 totalcost=StringVar()
 
 lblReference=Label(f1,font=('arial', 16, 'bold'),text="   Referans",bd=16,anchor='w')
@@ -191,7 +219,7 @@ txtStateTax.grid(row=3,column=3)
 #--------------------------------------------------------------------------------------
 lblSubTotal=Label(f1,font=('arial', 16, 'bold'),text="Sub Total",bd=16,anchor='w')
 lblSubTotal.grid(row=4,column=2)
-txtSubTotal=Entry(f1,font=('arial', 16, 'bold'),textvariable=msuyu, bd=10, insertwidth=4,
+txtSubTotal=Entry(f1,font=('arial', 16, 'bold'),textvariable=subtotal, bd=10, insertwidth=4,
                   bg="#fff", justify='right')
 txtSubTotal.grid(row=4,column=3)
 
